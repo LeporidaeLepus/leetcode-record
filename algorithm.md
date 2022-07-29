@@ -3,6 +3,7 @@
 ## Binary Search
 
 - Time complexity = O(log(n))
+- Sorted arrays, no duplicated elements.
 
 >[4. Median of two arays](https://leetcode.com/problems/median-of-two-sorted-arrays/)
 >
