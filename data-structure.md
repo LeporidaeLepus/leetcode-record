@@ -38,4 +38,52 @@
 
 - Set and update boundries.
 
->[54.Spiral Matrix](https://leetcode.com/problems/spiral-matrix/)
+>[54.Spiral Matrix](https://leetcode.com/problems/spiral-matrix/)  
+>
+>[885. Spiral Matrix III](https://leetcode.com/problems/spiral-matrix-iii/)
+>
+>```Java
+>class Solution {
+>
+>    public int[][] spiralMatrixIII(int rows, int cols, int rStart, int cStart) {
+>        int [][] res = new int[rows*cols][2];
+>        int left = cStart-1;
+>        int right = cStart+1;
+>        int up = rStart;
+>        int down = rStart+1;      
+>        int i=0;
+>        
+>        while(i<rows*cols){
+>            for(int c=Math.max(0,left+1);c<=right && c< cols && up>=0;c++){ 
+>                res[i][0] = up;
+>                res[i][1] = c;
+>                i++;
+>            }
+>            for(int r=Math.max(0,up+1);r<=down && r<rows && right<cols;r++){
+>                res[i][0] = r;
+>                res[i][1] = right;
+>                i++;
+>            }
+>            for(int c=Math.min(cols-1,right-1); c>=left && c>=0 && down<rows; c--){
+>                res[i][0] = down;
+>                res[i][1] = c;
+>                i++;
+>            }
+>            for(int r=Math.min(rows-1,down-1); r>=up && r>=0 && left>=0; r--){
+>                res[i][0] = r;
+>                res[i][1] = left;
+>                i++;
+>            }
+>            
+>            left--;
+>            up--;
+>            right++;
+>            down++;
+>            
+>        }
+>        return res;
+>    }
+>}
+>```
+>
+><mark>TODO: [2326. Spiral Matrix IV](https://leetcode.com/problems/spiral-matrix-iv/)</mark>
