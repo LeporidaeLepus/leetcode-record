@@ -1,5 +1,8 @@
 # Data Structure
 
+[Array](##Array)  
+[Linked List](##Linked-List)
+
 ## Array
 
 - Pay attention to the ***empty array*** and ***null.***
@@ -87,3 +90,5 @@
 >```
 >
 ><mark>TODO: [2326. Spiral Matrix IV](https://leetcode.com/problems/spiral-matrix-iv/)</mark>
+
+## Linked List
