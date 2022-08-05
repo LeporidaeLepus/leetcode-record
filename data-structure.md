@@ -33,3 +33,9 @@
 >3. Minus the subsum by the number the left pointer point to and move the left pointer one position right.
 >4. Check whether the left pointer is smaller than the right pointer and the subsum is still >= target. If they are, repeat 2. and 3., if they arn't, move the right pointer one positin right.
 >5. Repeat the above process while right pointer is smaller than the length of the array.
+
+### Spiral Matrix
+
+- Set and update boundries.
+
+>[54.Spiral Matrix](https://leetcode.com/problems/spiral-matrix/)
