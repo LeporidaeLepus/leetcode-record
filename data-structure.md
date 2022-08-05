@@ -1,7 +1,7 @@
 # Data Structure
 
-[Array](##Array)  
-[Linked List](##Linked-List)
+[Array](#Array)  
+[Linked List](#Linked-List)
 
 ## Array
 
