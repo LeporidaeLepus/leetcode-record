@@ -1,7 +1,7 @@
 # Data Structure
 
-[Array](#Array)  
-[Linked List](#Linked-List)
+- [Array](#Array)  
+- [Linked List](#Linked-List)
 
 ## Array
 
@@ -89,6 +89,20 @@
 >}
 >```
 >
-><mark>TODO: [2326. Spiral Matrix IV](https://leetcode.com/problems/spiral-matrix-iv/)</mark>
+><mark>**`TODO:`** [2326. Spiral Matrix IV](https://leetcode.com/problems/spiral-matrix-iv/)</mark>
 
 ## Linked List
+
+- Pay special attention to **NULL** linked list like [].  
+- Be careful to whitch ListNode is the next pointer links to.
+- If need to return a linked list, set a special head which will not be changed to return.(for examle the **dummyhead**)
+- If need to remove the head node, add a **dummy head** before the head.
+- When design Linked List, the head in the initiate function whose `val=0, next=null` is the **dummy head**.
+- `node = new ListNode()` returns a List Node `node.val=0, node.next=null` but not NULL. So if we need NULL, let `node=null`.
+
+>[19. Remove Nth Node From End of List](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
+>
+>- fast pointer & slow pointer
+>
+>[160. Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/)  
+> \# Approach 3: Two Pointers
