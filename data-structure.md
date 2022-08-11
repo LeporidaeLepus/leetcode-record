@@ -2,6 +2,9 @@
 
 - [Array](#Array)  
 - [Linked List](#Linked-List)
+- [Hash Table](#hash-table)
+- Important Problems
+  - [15. 3Sum](https://leetcode.com/problems/3sum/)
 
 ## Array
 
@@ -16,7 +19,9 @@
 - fast pointer & slow pointer
 - right pointer & left pointer
 
-**Used in:** *remove elements*;
+**Used in:** *remove elements*; *multiple sum*
+
+>[18. 4Sum](https://leetcode.com/problems/4sum/)
 
 ### Sliding Window
 
@@ -106,3 +111,22 @@
 >
 >[160. Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/)  
 > \# Approach 3: Two Pointers
+
+## Hash Table
+
+**Usage:** To quickly determine whether an element appears in the collection;
+
+- When it's about String or character, we can use an array whose `length=26` as the hash table.
+
+>[202. Happy Number](https://leetcode.com/problems/happy-number/)  
+>One way to  get each digit of a number `n`:
+>
+>```(java)
+>while(n!=0){
+>   int d = n % 10;
+>   n = n /1 0;
+>}
+>```
+>
+>[454. 4Sum II](https://leetcode.com/problems/4sum-ii/solution/)  
+>Read the solution about interview.
