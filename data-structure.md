@@ -116,7 +116,8 @@
 
 **Usage:** To quickly determine whether an element appears in the collection;
 
-- When it's about String or character, we can use an array whose `length=26` as the hash table.
+- Hash table uses more space.
+- When it's about String or character (especially only contains lowercase / uppercase ), we can use an array whose `length=26` as the hash table.
 
 >[202. Happy Number](https://leetcode.com/problems/happy-number/)  
 >One way to  get each digit of a number `n`:
@@ -130,3 +131,12 @@
 >
 >[454. 4Sum II](https://leetcode.com/problems/4sum-ii/solution/)  
 >Read the solution about interview.
+
+## Character
+
+- In Java, String cannot be modified directly. String should be transfered into charArray or use StringBuilder first.
+  - (e.g. `String s; s.charAt(a) = s.charAt(b)` will report an error.)
+
+>[151. Reverse Words in a String](https://leetcode.com/problems/reverse-words-in-a-string/)
+>
+> - Reverse twice: reverse the whole string and then reverse each words.
