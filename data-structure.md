@@ -3,6 +3,7 @@
 - [Array](#Array)  
 - [Linked List](#Linked-List)
 - [Hash Table](#hash-table)
+- [Chracter](#character)
 - Important Problems
   - [15. 3Sum](https://leetcode.com/problems/3sum/)
 
@@ -96,6 +97,8 @@
 >
 ><mark>**`TODO:`** [2326. Spiral Matrix IV](https://leetcode.com/problems/spiral-matrix-iv/)</mark>
 
+&nbsp;
+
 ## Linked List
 
 - Pay special attention to **NULL** linked list like [].  
@@ -111,6 +114,8 @@
 >
 >[160. Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/)  
 > \# Approach 3: Two Pointers
+
+&nbsp;
 
 ## Hash Table
 
@@ -132,6 +137,8 @@
 >[454. 4Sum II](https://leetcode.com/problems/4sum-ii/solution/)  
 >Read the solution about interview.
 
+&nbsp;
+
 ## Character
 
 - In Java, String cannot be modified directly. String should be transfered into charArray or use StringBuilder first.
@@ -140,3 +147,17 @@
 >[151. Reverse Words in a String](https://leetcode.com/problems/reverse-words-in-a-string/)
 >
 > - Reverse twice: reverse the whole string and then reverse each words.
+> - [剑指 Offer 58 - II. 左旋转字符串](https://leetcode.cn/problems/zuo-xuan-zhuan-zi-fu-chuan-lcof/)
+
+### KMP Algorithm
+
+- KMP is used when we are given **a text `txt[0..n-1`]** and **a pattern `pat[0..m-1]`** *(n>m)* and need to write a function search(char pat[], char txt[]) that **prints all occurrences of pat[] in txt[]**.  
+- The basic idea behind KMP’s algorithm is:  
+  - whenever we detect a mismatch (after some matches), we already know some of the characters in the text of the next window. We take advantage of this information to avoid matching the characters that we know will anyway match.
+
+1. Preprocessing the pattern `pat[]` and create an integer array **`lps[]`** of size `m` (which is the same as the pattern). This array is used to skip character while matching.
+   - lps: longest proper prefix which is also suffix.  
+2. When `index = i`, `lps[i]` stores length of the maximum matching proper prefix which is also a suffix of the sub-pattern `pat[0..i]`.
+3. When `txt[k]` is mismatched with `pat[i+1]`, we check `lps[i]`. Since the former `lps[i]` characters are the same as the first `lps[i]` character in the pattern, we don't need to campare them any more. We can skip to compare the `lps[i]+1` character whose index is `lps[i]`, which means compare `txt[k]` with `pat[lps[i]]`.
+
+>refer: [KMP Algorithm for Pattern Searching](https://www.geeksforgeeks.org/kmp-algorithm-for-pattern-searching/)
