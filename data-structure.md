@@ -143,6 +143,8 @@
 
 - In Java, String cannot be modified directly. String should be transfered into charArray or use StringBuilder first.
   - (e.g. `String s; s.charAt(a) = s.charAt(b)` will report an error.)
+- *Two Pointers*
+- *KMP*
 
 >[151. Reverse Words in a String](https://leetcode.com/problems/reverse-words-in-a-string/)
 >
@@ -151,6 +153,8 @@
 
 ### KMP Algorithm
 
+- **Key:** *partial match table / lookup table /  failure function table*
+  - It stores the length of the longest prefix that is also a suffix.
 - KMP is used when we are given **a text `txt[0..n-1`]** and **a pattern `pat[0..m-1]`** *(n>m)* and need to write a function search(char pat[], char txt[]) that **prints all occurrences of pat[] in txt[]**.  
 - The basic idea behind KMP’s algorithm is:  
   - whenever we detect a mismatch (after some matches), we already know some of the characters in the text of the next window. We take advantage of this information to avoid matching the characters that we know will anyway match.
@@ -210,3 +214,5 @@
 >```
 >
 > - [Solustion](https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0028.实现strStr.md)
+>
+> [459. Repeated Substring Pattern](https://leetcode.com/problems/repeated-substring-pattern/)
