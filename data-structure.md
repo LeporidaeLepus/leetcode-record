@@ -160,4 +160,53 @@
 2. When `index = i`, `lps[i]` stores length of the maximum matching proper prefix which is also a suffix of the sub-pattern `pat[0..i]`.
 3. When `txt[k]` is mismatched with `pat[i+1]`, we check `lps[i]`. Since the former `lps[i]` characters are the same as the first `lps[i]` character in the pattern, we don't need to campare them any more. We can skip to compare the `lps[i]+1` character whose index is `lps[i]`, which means compare `txt[k]` with `pat[lps[i]]`.
 
->refer: [KMP Algorithm for Pattern Searching](https://www.geeksforgeeks.org/kmp-algorithm-for-pattern-searching/)
+- >refer: [KMP Algorithm for Pattern Searching](https://www.geeksforgeeks.org/kmp-algorithm-for-pattern-searching/)
+
+>[28. Find the Index of the First Occurrence in a String](https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/)
+>
+>```java
+>class Solution {
+>    public int strStr(String haystack, String needle) {
+>        int m = needle.length();
+>        int n = haystack.length();
+>        int[] lps = new int[m];
+>        
+>        //Initiate lps
+>        int j = 0;
+>        lps[0] = 0;
+>        for(int i=1; i<m; i++){
+>            //If there is a subarray before .needle[i] be a suffix which is also a proper perfix,
+>            //test whether the subarray still a suffix which is also a proper perfix
+>            //after adding needle[i].
+>            while(j>0 && needle.charAt(i) != needle.charAt(j)){
+>                j = lps[j-1];
+>            }
+>            
+>            if(needle.charAt(i) == needle.charAt(j)){
+>                j++;
+>            }
+>            lps[i] = j;
+>        }
+>        
+>        //Compare haystack with needle
+>        j = 0;
+>        for(int i=0; i<n; i++){
+>            while(j>0 && haystack.charAt(i) != needle.charAt(j)){
+>                j = lps[j-1];
+>            }
+>            
+>            if(haystack.charAt(i) == needle.charAt(j)){
+>                j++;
+>            }
+>            if(j == m){     //When j==m, needle is completely matched
+>                return i-m+1;       //The index in haystack minus the length of needle and add 1 
+>                                    //is the first index of the first occurrence
+>            }
+>        }
+>        
+>        return -1;
+>    }
+>}
+>```
+>
+> - [Solustion](https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0028.实现strStr.md)
