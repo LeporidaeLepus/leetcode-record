@@ -216,3 +216,12 @@
 > - [Solustion](https://github.com/youngyangyang04/leetcode-master/blob/master/problems/0028.实现strStr.md)
 >
 > [459. Repeated Substring Pattern](https://leetcode.com/problems/repeated-substring-pattern/)
+
+## Stack and Queue
+
+### Monitonic Stack
+
+>[84. Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/)
+>
+> - Pay attention to the interval (which means width) when calculating the area.
+> - Need to push -1 to the stack at the very beginning as a boundary.
