@@ -219,9 +219,28 @@
 
 ## Stack and Queue
 
+- When we use **`Stack`**, elements after `stack[i]` will not affect elements before `stack[i]`.
+  > [155. Min Stack](https://leetcode.com/problems/min-stack/)
+  >
+  > - The minimum number of the stack may be changed after pushing and popping. But to each elements, when it is at the peek of the stack, there is a fixed  minimum number mapping to it.
+
 ### Monitonic Stack
 
 >[84. Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/)
 >
 > - Pay attention to the interval (which means width) when calculating the area.
 > - Need to push -1 to the stack at the very beginning as a boundary.
+>
+>[85. Maximal Rectangle](https://leetcode.com/problems/maximal-rectangle/)
+>
+> - How to calculating the height of each row's histogram without extra time complexity.
+>
+> ```java
+>int[] heights = new int[cols];
+>        
+>        for(int i=0; i<rows; i++){
+>            for(int j=0; j<cols; j++){
+>                heights[j] = matrix[i][j] == '1' ? heights[j] + 1 : 0;
+>            }
+>        }
+> ```
