@@ -4,6 +4,7 @@
 - [Linked List](#Linked-List)
 - [Hash Table](#hash-table)
 - [Chracter](#character)
+- [Stack and Queue](#stack-and-queue)
 - Important Problems
   - [15. 3Sum](https://leetcode.com/problems/3sum/)
 
@@ -226,6 +227,8 @@
 
 ### Monitonic Stack
 
+- Keep the elements in the Stack monotonic increasing / decreasing by popping all the in-stack elements which are larger / smaller than the element that is going to be pushed into the Stack.
+
 >[84. Largest Rectangle in Histogram](https://leetcode.com/problems/largest-rectangle-in-histogram/)
 >
 > - Pay attention to the interval (which means width) when calculating the area.
@@ -244,3 +247,9 @@
 >            }
 >        }
 > ```
+
+### Monotonic Queue
+
+- Keep the elements in the Queue monotonic increasing / decreasing by removing all the elements larger / smaller than the element which is going to be added to the Queue. Removing and adding elements should at the same end.
+
+> [239. Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/)
