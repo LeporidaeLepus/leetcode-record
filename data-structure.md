@@ -1,7 +1,7 @@
 # Data Structure
 
-- [Array](#Array)  
-- [Linked List](#Linked-List)
+- [Array](#array)  
+- [Linked List](#linked-list)
 - [Hash Table](#hash-table)
 - [Chracter](#character)
 - [Stack and Queue](#stack-and-queue)
@@ -253,3 +253,11 @@
 - Keep the elements in the Queue monotonic increasing / decreasing by removing all the elements larger / smaller than the element which is going to be added to the Queue. Removing and adding elements should at the same end.
 
 > [239. Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/)
+
+&nbsp;
+
+## Binary Tree
+
+### Travelsal
+
+- indorder traversal
