@@ -6,5 +6,7 @@ This is a personal collection of the points that should be paid attention to whi
 
 The notes contain to parts:
 
-- [Data Struncture]()
+- [Data Struncture](data-structure.md)
 - [Algorithm](algorithm.md)
+
+**NOTE:** This repository is still in building.
