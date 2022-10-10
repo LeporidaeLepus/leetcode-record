@@ -5,6 +5,7 @@
 - [Hash Table](#hash-table)
 - [Chracter](#character)
 - [Stack and Queue](#stack-and-queue)
+- [Binary Tree](#binary-tree)
 - Important Problems
   - [15. 3Sum](https://leetcode.com/problems/3sum/)
 
@@ -258,6 +259,19 @@
 
 ## Binary Tree
 
-### Travelsal
+1. recursive
+2. iterative
+3. stack
 
-- indorder traversal
+### Traversal
+
+Only DFS has traversal order.  
+(the traversal order is the order in which the rood nodes are visited.)
+
+- preorder traversal
+- inorder traversal
+- postorder traversal
+
+### BFS
+
+### DFS
