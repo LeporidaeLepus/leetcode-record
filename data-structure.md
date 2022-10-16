@@ -262,6 +262,7 @@
 1. recursive
 2. iterative
 3. stack
+4. Morris Traversal
 
 > Sometimes the itreative and stack will be used together.  
 > [114. Flatten Binary Tree to Linked List](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/solution/)
