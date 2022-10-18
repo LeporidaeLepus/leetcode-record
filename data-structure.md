@@ -260,12 +260,9 @@
 ## Binary Tree
 
 1. recursive
-2. iterative
-3. stack
-4. Morris Traversal
-
-> Sometimes the itreative and stack will be used together.  
-> [114. Flatten Binary Tree to Linked List](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/solution/)
+2. iterative + stack
+3. Morris Traversal (without additional space)
+   - > [114. Flatten Binary Tree to Linked List](https://leetcode.com/problems/flatten-binary-tree-to-linked-list/solution/)
 
 ### Traversal
 
@@ -275,6 +272,14 @@ Only DFS has traversal order.
 - preorder traversal
 - inorder traversal
 - postorder traversal
+
+### BST (Binary Search Tree)
+
+recursion + memory -> Dynamic Problem
+
+To test whether a binary tree is a **valid BST**, use **inorder traversal** to turn the tree into an array and test whether the array is ascending.
+
+> [98. Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)
 
 ### BFS
 

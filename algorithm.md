@@ -4,6 +4,7 @@
 
 - Time complexity = O(log(n))
 - Sorted arrays, no duplicated elements.
+- Be careful of the bounds
 
 >[4. Median of two arays](https://leetcode.com/problems/median-of-two-sorted-arrays/)
 >
@@ -13,3 +14,5 @@
 >
 > - After the search of k1 elements, we still have (k-k1) elements to search.
 > - If the Amid_n is equan or larger to the length of A, then the next Amid_(n+1) should be cut down, which means we should deal it as AA\[Amid\] > B\[Bmid\].
+>
+>[33. Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)
