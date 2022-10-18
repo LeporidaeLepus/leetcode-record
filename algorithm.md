@@ -1,5 +1,10 @@
 # Algorithm
 
+- [Algorithm](#algorithm)
+  - [Binary Search](#binary-search)
+  - [DFS (Depth-First Search)](#dfs-depth-first-search)
+  - [Divide and Conqure](#divide-and-conqure)
+
 ## Binary Search
 
 - Time complexity = O(log(n))
@@ -16,6 +21,25 @@
 > - If the Amid_n is equan or larger to the length of A, then the next Amid_(n+1) should be cut down, which means we should deal it as AA\[Amid\] > B\[Bmid\].
 >
 >[33. Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)
+
+## DFS (Depth-First Search)
+
+- recursion
+- iteration + stack
+  
+  - ```java
+    Deque<TreeNode> stack = new ArrayDeque<>();
+    stack.push(root);
+    while(!stack.isEmpty()){
+        TreeNode node = stack.pop();
+        if(node.left != null)
+            stack.push(node.left);
+        if(node.right != null)
+            stack.push(node.right);
+    }
+    ```
+
+>[236. Lowest Common Ancestor of a Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)
 
 ## Divide and Conqure
 
