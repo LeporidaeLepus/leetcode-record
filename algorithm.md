@@ -16,3 +16,10 @@
 > - If the Amid_n is equan or larger to the length of A, then the next Amid_(n+1) should be cut down, which means we should deal it as AA\[Amid\] > B\[Bmid\].
 >
 >[33. Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/)
+
+## Divide and Conqure
+
+- resursion
+
+> [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)  
+> divideed into 3 parts (left, right, combine), calculate the conbine part in every recursion function and use recursion get the left and right part. Compare the 3 part at the end of the recursion function.
