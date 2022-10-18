@@ -3,6 +3,7 @@
 - [Algorithm](#algorithm)
   - [Binary Search](#binary-search)
   - [DFS (Depth-First Search)](#dfs-depth-first-search)
+  - [BFS (Breadth-First Search)](#bfs-breadth-first-search)
   - [Divide and Conqure](#divide-and-conqure)
 
 ## Binary Search
@@ -40,6 +41,23 @@
     ```
 
 >[236. Lowest Common Ancestor of a Binary Tree](https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/)
+
+## BFS (Breadth-First Search)
+
+- iteration + queue
+
+  - ```java
+    Queue<TreeNode> queue = new linkedList<>();
+    queue.add(root);
+    while(!queue.isEmpty()){
+        TreeNode node = queue.remove();
+        if(node.left != null)
+            queue.add(node.left);
+        if(node.right != null)
+            queue.add(node.right);
+    }
+
+&nbsp;
 
 ## Divide and Conqure
 
