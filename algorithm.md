@@ -4,7 +4,9 @@
   - [Binary Search](#binary-search)
   - [DFS (Depth-First Search)](#dfs-depth-first-search)
   - [BFS (Breadth-First Search)](#bfs-breadth-first-search)
+  - [Recursion](#recursion)
   - [Divide and Conqure](#divide-and-conqure)
+  - [Sort](#sort)
 
 ## Binary Search
 
@@ -59,9 +61,19 @@
 
 &nbsp;
 
+## Recursion
+
+Space Complexity: O(N)
+
+- For a recursive solution there is always stack space used as internal function states are saved onto a stack during recursion. The maximum depth of recursion decides the stack space used.  
+
+&nbsp;
+
 ## Divide and Conqure
 
 - resursion
 
 > [53. Maximum Subarray](https://leetcode.com/problems/maximum-subarray/)  
 > divideed into 3 parts (left, right, combine), calculate the conbine part in every recursion function and use recursion get the left and right part. Compare the 3 part at the end of the recursion function.
+
+## Sort
