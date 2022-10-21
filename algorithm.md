@@ -7,6 +7,13 @@
   - [Recursion](#recursion)
   - [Divide and Conqure](#divide-and-conqure)
   - [Sort](#sort)
+    - [1. QuickSort](#1-quicksort)
+      - [QuickSelection](#quickselection)
+    - [2. InsertingSort](#2-insertingsort)
+    - [3. BubbleSort](#3-bubblesort)
+    - [4. MergeSort](#4-mergesort)
+    - [5. HeapSort](#5-heapsort)
+    - [6. SelectionSort](#6-selectionsort)
 
 ## Binary Search
 
@@ -77,3 +84,20 @@ Space Complexity: O(N)
 > divideed into 3 parts (left, right, combine), calculate the conbine part in every recursion function and use recursion get the left and right part. Compare the 3 part at the end of the recursion function.
 
 ## Sort
+
+- In Place Sort:
+- Stability:
+
+### 1. QuickSort
+
+#### QuickSelection
+
+### 2. InsertingSort
+
+### 3. BubbleSort
+
+### 4. MergeSort
+
+### 5. HeapSort
+
+### 6. SelectionSort
