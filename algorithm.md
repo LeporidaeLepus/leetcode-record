@@ -85,14 +85,37 @@ Space Complexity: O(N)
 
 ## Sort
 
-- In Place Sort:
-- Stability:
+- **In Place Sort**: the amount of extra space required to sort the data is constant with the input size. (Which means ***Space Compexity = O(1)***.)
+- **Stability**: a STABLE sort preserves relative order records with equal keys
 
 ### 1. QuickSort
 
 #### QuickSelection
 
 ### 2. InsertingSort
+
+- **Time Complexity: O(N<sup>2</sup>)**
+- In-place
+- stable
+
+In the ith loop, insert the (i+1)th element into an appropriate place of the first well-ordered ith elements. The top of the array should always be in ordered.
+
+```java
+public int[] InsertingSort(int[] nums){
+    int len = nums.length;
+    if(len <= 1)    return nums;
+
+    for(int i=1; i<len; i++){
+        int cur = nums[i];
+        int j = i-1;
+        while(j>=0 && nums[j]>cur){
+            nums[j+1] = nums[j];
+            j+--;
+        }
+        nums[j+1] = cur;
+    }
+}
+```
 
 ### 3. BubbleSort
 
