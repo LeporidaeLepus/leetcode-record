@@ -41,11 +41,11 @@
     Deque<TreeNode> stack = new ArrayDeque<>();
     stack.push(root);
     while(!stack.isEmpty()){
-        TreeNode node = stack.pop();
-        if(node.left != null)
-            stack.push(node.left);
-        if(node.right != null)
-            stack.push(node.right);
+      TreeNode node = stack.pop();
+      if(node.left != null)
+        stack.push(node.left);
+      if(node.right != null)
+        stack.push(node.right);
     }
     ```
 
@@ -59,11 +59,11 @@
     Queue<TreeNode> queue = new linkedList<>();
     queue.add(root);
     while(!queue.isEmpty()){
-        TreeNode node = queue.remove();
-        if(node.left != null)
-            queue.add(node.left);
-        if(node.right != null)
-            queue.add(node.right);
+      TreeNode node = queue.remove();
+      if(node.left != null)
+        queue.add(node.left);
+      if(node.right != null)
+        queue.add(node.right);
     }
 
 &nbsp;
@@ -104,18 +104,18 @@ In the ith loop, insert the (i+1)th element into an appropriate place of the fir
 
 ```java
 public int[] InsertingSort(int[] nums){
-    int len = nums.length;
-    if(len <= 1)    return nums;
+  int len = nums.length;
+  if(len <= 1)    return nums;
 
-    for(int i=1; i<len; i++){
-        int cur = nums[i];
-        int j = i-1;
-        while(j>=0 && nums[j]>cur){
-            nums[j+1] = nums[j];
-            j+--;
-        }
-        nums[j+1] = cur;
+  for(int i=1; i<len; i++){
+    int cur = nums[i];
+    int j = i-1;
+    while(j>=0 && nums[j]>cur){
+      nums[j+1] = nums[j];
+      j+--;
     }
+    nums[j+1] = cur;
+  }
 }
 ```
 
@@ -129,23 +129,23 @@ Repeatedly pass through the array and swap adjacent elements that are out of ord
 
 ```java
 public int[] BubbleSort(int[] nums){
-    int len = nums.length;
-    if(len <= 1)    return nums;
+  int len = nums.length;
+  if(len <= 1)    return nums;
 
-    for(int i=0; i<len-1; i++){
-        //flag to test whether the rest part of the array is in order.
-        boolean flag = true;    
-        for(int j=0; j<len-i-1; j++){
-            if(nums[j] > nums[j+1]){
-                int temp = nums[j];
-                nums[j] = nums[j+1];
-                nums[j+1] = temp;
-                flag = false;
-            }
+  for(int i=0; i<len-1; i++){
+    //flag to test whether the rest part of the array is in order.
+    boolean flag = true;    
+      for(int j=0; j<len-i-1; j++){
+        if(nums[j] > nums[j+1]){
+          int temp = nums[j];
+          nums[j] = nums[j+1];
+          nums[j+1] = temp;
+          flag = false;
         }
-        if(flag == true)    break;
-    }
-    return nums;
+      }
+      if(flag == true)    break;
+  }
+  return nums;
 }
 ```
 
@@ -160,48 +160,48 @@ public int[] BubbleSort(int[] nums){
 
 ```java
 class Solution{
-    public int[] mergeSortSolution(int[] nums){
-        MergeSort(nums, 0, nums.length-1);
-        return nums;
+  public int[] mergeSortSolution(int[] nums){
+    MergeSort(nums, 0, nums.length-1);
+    return nums;
+  }
+
+  public void MergeSort(int[] nums, int start, int end){
+    if(start == end)    return;
+
+    int mid = (start + end) / 2;
+    MergeSort(nums, start, mid);
+    MergeSort(nums, mid+1, end);
+    merge(nums, start, mid, end);
+  }
+
+  public void merge(int[] nums, int start, int mid, int end){
+    int[] temp = new int[end - start + 1];
+    int left = start;
+    int right = mid+1;
+    int i = 0;
+
+    //compare the head of these two ordered array and put the smaller one into temp
+    while(left<=mid && right<=end){
+      if(nums[left] <= nums[right]){
+        temp[i++] = nums[left++];
+      }else{
+        temp[i++] = nums[right++];
+      }
     }
-
-    public void MergeSort(int[] nums, int start, int end){
-        if(start == end)    return;
-
-        int mid = (start + end) / 2;
-        MergeSort(nums, start, mid);
-        MergeSort(nums, mid+1, end);
-        merge(nums, start, mid, end);
+    //put the rest part into temp
+    if(left == mid){
+      while(right <= end){
+        temp[i++] = nums[right++];
+      }
+    }else{
+        while(left <= mid){
+          temp[i++] =nums[left++];
+        }
     }
-
-    public void merge(int[] nums, int start, int mid, int end){
-        int[] temp = new int[end - start + 1];
-        int left = start;
-        int right = mid+1;
-        int i = 0;
-
-        //compare the head of these two ordered aray and put the smaller one into temp
-        while(left<=mid && right<=end){
-            if(nums[left] <= nums[right]){
-                temp[i++] = nums[left++];
-            }else{
-                temp[i++] = nums[right++];
-            }
-        }
-        //put the rest part into temp
-        if(left == mid){
-            while(right <= end){
-                temp[i++] = nums[right++];
-            }
-        }else{
-            while(left <= mid){
-                temp[i++] =nums[left++];
-            }
-        }
-        //cover the original array with temp 
-        for(int j=0; j<temp.length; j++){
-            nums[start+j] = temp[j];
-        }
+    //cover the original array with temp 
+    for(int j=0; j<temp.length; j++){
+      nums[start+j] = temp[j];
+    }
 }
 ```
 
@@ -211,25 +211,46 @@ class Solution{
 - in-place
 
 Related Information:
+
 1. A heap is a nearly complete binary tree that is filled in order
 2. The root is the maximum/minimum emlement of the heap
 3. A heap can be stored as an array A (index starts from 1)
-   - root = A[1]
-   - Node i = A[i]
-   - left child of Node i = A[2i]
-   - right chile of Node i = A[2i+1]
-   - Parent of Node i = A[i/2]
+   - root = A[1] (`A[0]`)
+   - Node i = A[i] (`A[i-1]`)
+   - left child of Node i = A[2i] (`A[2i+1]`)
+   - right chile of Node i = A[2i+1] (`A[2i+2]`)
+   - Parent of Node i = A[i/2]  (`A[(i-1)/2]`)
    - A[n/2+1, ... , n] are leaves
 4. Heap Types
    - Max-heaps: A[PARENT(i)] >= A[i]
    - Min-heaps: A[PARENT(i)] <= A[i]
 5. New nodes are always inserted *at the bottom level* (left to right); Nodes are always removed *from the bottom level* (right to left)
 6. **`MAX-HEAPIFY`**: maintian the max-heap property
-   - If a node is smaller thean a child, exchange it with its larger child. Move down the tree and do this process recursively untill node is not smaller than children.
+   - If a node is smaller thean a child, exchange it with its larger child. Move down the tree and do this process **recursively** untill node is not smaller than children.
 
     ```java
-    public void MaxHeapify(int[] nums, int i, int end){
-        
+    public void MaxHeapify(int[] nums, int curr, int end){
+      int largest = curr;
+      int leftchild = curr * 2 + 1;
+      int rightchild = curr * 2 + 2;
+    
+      if(leftchild<=end && nums[leftchild]>nums[curr]){
+        largest = leftchild;
+      }
+      if(rightchild<=end && nums[rightchild]>nums[largest]){
+        largest = right;
+      }
+
+      if(largest != curr){
+        swap(nums, curr, largest);
+        MaxHeapify(nums, largest, end);
+      }
+    }
+
+    private void swap(int[] nums, int i, int j){
+      int temp = nums[i];
+      nums[i] = nums[j];
+      nums[j] = temp;
     }
     ```
 
