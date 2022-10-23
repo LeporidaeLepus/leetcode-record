@@ -274,6 +274,8 @@ class Solution{
   PriorityQueue<T> heap = new PriorityQueue<T>(Comparator<T> c);
   ```
 
+  - can be used to find the kth smallest / largest element by limiting the length of `heap`
+
 Related Information:
 
 1. A heap is a nearly complete binary tree that is filled in order
