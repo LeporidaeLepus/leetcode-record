@@ -8,7 +8,7 @@
   - [Divide and Conqure](#divide-and-conqure)
   - [Sort](#sort)
     - [1. QuickSort](#1-quicksort)
-      - [QuickSelection](#quickselection)
+      - [QuickSelect](#quickselect)
     - [2. InsertingSort](#2-insertingsort)
     - [3. BubbleSort](#3-bubblesort)
     - [4. MergeSort](#4-mergesort)
@@ -90,7 +90,66 @@ Space Complexity: O(N)
 
 ### 1. QuickSort
 
-#### QuickSelection
+- **Time Complexity: O(N·logN)**
+  - worst case: O(N<sup>2</sup>)
+  - but the worst case doesn't happen often
+- in-place
+
+To sort an array `A[p...r]`, partition the array into 2 subarrays `A[p...q]`, `A[q+1...r]` (choose an element as **`pivot`**), such that each element of A[p...q] is smaller than or equal to each element in A[q+1...r]. Do this process to each subarray **recursively** until there is only one element in each subarray. (No adition work need to combine them.)
+
+```java
+public QuickSort{
+  public int[] QuickSort(int[] nums){
+    sort(nums, 0, nums.length - 1);
+    return nums;
+  } 
+
+  private void sort(int[] nums, int start, int end){
+    if(start >= end)  return;
+
+    //for random pivot:
+    //int pivot = nums[start + (int)(Math.random()*(end-start+1))];
+    int pivot = nums[start];
+    int i = start;
+    int j = end+1;
+
+    while(i<j){
+      //loop j first then we will not need to worry about the index out of bounds
+      do{   
+        j--;
+      }while(i<j && nums[j] >= pivot);
+      do{
+        i++;
+      }while(nums[i] <= pivot);
+
+      f(i < j){
+        swap(nums, i, j);
+      }
+      else{
+        // in ascending order, and with the origin position of pivot is in the head of the subarray, 
+        //we swap it with the smaller one between nums[i] and nums[j]
+        swap(nums, j, start);
+      }
+    }
+
+    sort(nums, start, j-1);
+    sort(nums, j+1, end);
+  }
+
+  private void swap(int nums[], int i, int j){
+    int temp = nums[i];
+    nums[i] = nums[j];
+    nums[j] = temp;
+  }
+}
+```
+
+#### QuickSelect
+
+- Is used to **find the kth** smallest / largest element in an unordered list.
+- Instead of recurring for both sides after finding pivot, it recurs only for the part contains the kth element.
+- **Time Complexity**: (reduced from O(N·logN) to) **O(N)**
+  - worst case: O(N<sup>2</sup>)
 
 ### 2. InsertingSort
 
@@ -207,7 +266,7 @@ class Solution{
 
 ### 5. HeapSort
 
-- Time Complexity:
+- **Time Complexity: O(N·logN)**
 - in-place
 
 Related Information:
@@ -287,3 +346,30 @@ class HeapSort{
 ```
 
 ### 6. SelectionSort
+
+- **Time Complexity: O(N<sup>2</sup>)**
+
+Repeatedly find the minimum element (considering asceding order) from the unsorted part and put it at the beginning of this part. The first part of the array is always sorted and the ramianing part is unsorted. The length of the sorted subarray will `+1` after every iteration.
+
+```java
+public int[] SelectionSort(int[] nums){
+  int len = nums.length;
+  if(len <= 0)  return nums;
+
+  for(int i=0; i<len-1; i++){
+    int min = i;
+    for(int j=i+1; j<len; j++){
+      if(nums[j] < nums[min]){
+        min = j;
+      }
+    }
+    if(min != i){
+      int temp = nums[i];
+      nums[i] = nums[j];
+      nums[j] = temp;
+    }
+  }
+
+  return nums;
+}
+```
