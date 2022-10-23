@@ -120,7 +120,7 @@ public QuickSort{
       }while(i<j && nums[j] >= pivot);
       do{
         i++;
-      }while(nums[i] <= pivot);
+      }while(i<j && nums[i] <= pivot);
 
       f(i < j){
         swap(nums, i, j);
@@ -272,6 +272,9 @@ class Solution{
   
   ```java
   PriorityQueue<T> heap = new PriorityQueue<T>(Comparator<T> c);
+  heap.add(T o);  
+  heap.poll();  // return and remove the head of the PriorityQueue
+  int size = heap.size();
   ```
 
   - can be used to find the kth smallest / largest element by limiting the length of `heap`

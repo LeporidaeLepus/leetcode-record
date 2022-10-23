@@ -16,6 +16,16 @@
 - Problems about 'sum' can be transformed into problems about 'difference'. Then we can use **HashMap** to decrease O().  
 - Problems don't allow duplicated elements can be solved by **HashSet**.  
   - We sort the array first and put an element into the HashSet every time we meet an new one. Then finding a completment in the HashSet means this complement is in the array and it's an result we need.
+  
+  ```java
+  // from set to array
+  Set<Integer> set = new HashSet<Integer>();
+  int[] arr = new int[set.size()];
+  int i = 0;
+  for(int a : set){
+    arr[i++] = a;
+  }
+  ```
 
 ### Two Pointers
 
