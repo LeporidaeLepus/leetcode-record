@@ -254,6 +254,36 @@ Related Information:
     }
     ```
 
+7. **Building a Heap**: we can build a heap **in a bottom-up manner** by running MAX-HEAPIFY on successive subarrays
+   - Since A[n/2+1, ..., n] (`A[n/2, ..., n-1]`) are leaves,
+   - we only need to run MAX-HEAPIFY between A[1, ..., n/2] (`A[0, ..., n/2-1]`)
+  
+    ```java
+    private void buildMaxHeap(int[] nums){
+      int len = nums.length;
+    
+      for(int i=len-1; i>=0; i++){
+        MaxHeapify(nums, i, len-1);
+      }
+    }
+    ```
+
 Build a max-heap from the array. Swap the root (the maximum element) with the last element in the array. Decrease the heap size by 1 (the last element will not be concerned any more). Call MAX-HEAPIFY on the new root to maintian the max-heap. Preat this process until only one node remains.
+
+```java
+class HeapSort{
+  public int[] maxHeapSort(int[] nums){
+    buildMaxHeap(nums);
+    int size = nums.length-1;
+    while(size > 0){
+      swap(nums, 0, size);
+      size--;
+      MaxHeapify(nums, 0, size);
+    }
+    // the return array is in ascending order
+    return nums;
+  }
+}
+```
 
 ### 6. SelectionSort
