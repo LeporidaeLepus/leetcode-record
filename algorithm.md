@@ -268,6 +268,11 @@ class Solution{
 
 - **Time Complexity: O(N·logN)**
 - in-place
+- In Java, we can use `PriorityQueue`
+  
+  ```java
+  PriorityQueue<T> heap = new PriorityQueue<T>(Comparator<T> c);
+  ```
 
 Related Information:
 
