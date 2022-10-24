@@ -14,6 +14,7 @@
     - [4. MergeSort](#4-mergesort)
     - [5. HeapSort](#5-heapsort)
     - [6. SelectionSort](#6-selectionsort)
+  - [Dynamic Progamming](#dynamic-progamming)
 
 ## Binary Search
 
@@ -383,3 +384,7 @@ public int[] SelectionSort(int[] nums){
   return nums;
 }
 ```
+
+&nbsp;
+
+## Dynamic Progamming
