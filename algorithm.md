@@ -388,3 +388,6 @@ public int[] SelectionSort(int[] nums){
 &nbsp;
 
 ## Dynamic Progamming
+
+- Bottom-Up DP (Tabulation)
+- Top-Down DP(Recersion + Memoization)
