@@ -391,3 +391,25 @@ public int[] SelectionSort(int[] nums){
 
 - Bottom-Up DP (Tabulation)
 - Top-Down DP(Recersion + Memoization)
+
+> <big>**Combination**</big>  
+>
+> **C<sup>k</sup><sub>n</sub> = (<sup>n</sup><sub>k</sub>) = n! / k!(n-k)! = n(n-1)...(n-k+1) / k!**
+>
+> ```java
+> // we should keep dividing the numerator by the denominator when caculating to avoid over flow
+> public int combination(int n, int k){
+>   long numerator = 1; // 分子
+>   int denominator = k; // 分母
+>   int count = k;
+>   int t = n;
+>   while(count--){
+>     numetator *= t--;
+>     while(denominator != 0 && numerator % denominatoe == 0){
+>       numerator /= denominator;
+>       denominator--;
+>     }
+>   }
+>   return numerator;
+> }
+> ```
