@@ -392,12 +392,12 @@ public int[] SelectionSort(int[] nums){
 - Bottom-Up DP (Tabulation)
 - Top-Down DP(Recersion + Memoization)
 
-1. Defination of DB table
-2. Recursion formula for DB table
+1. Defination of DP table and the index
+2. Recursion formula for DP table
 3. Initialization of the DP table
     > [63. Unique Paths II](https://leetcode.com/problems/unique-paths-ii/)
-4. Traversal order for DB table
-5. Give examples of DB table
+4. Traversal order for DP table
+5. Deriving an example tabulation from processes above to check the correctness
 
 > <big>**Combination**</big>  
 >
