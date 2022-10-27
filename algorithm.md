@@ -392,9 +392,19 @@ public int[] SelectionSort(int[] nums){
 - Bottom-Up DP (Tabulation)
 - Top-Down DP(Recersion + Memoization)
 
+1. Defination of DB table
+2. Recursion formula for DB table
+3. Initialization of the DP table
+    > [63. Unique Paths II](https://leetcode.com/problems/unique-paths-ii/)
+4. Traversal order for DB table
+5. Give examples of DB table
+
 > <big>**Combination**</big>  
 >
 > **C<sup>k</sup><sub>n</sub> = (<sup>n</sup><sub>k</sub>) = n! / k!(n-k)! = n(n-1)...(n-k+1) / k!**
+>
+> - Time Complexity: O(k)
+> - Space Complexity: O(1)
 >
 > ```java
 > // we should keep dividing the numerator by the denominator when caculating to avoid over flow
