@@ -15,6 +15,8 @@
     - [5. HeapSort](#5-heapsort)
     - [6. SelectionSort](#6-selectionsort)
   - [Dynamic Progamming](#dynamic-progamming)
+    - [Knapsack Problem](#knapsack-problem)
+      - [0-1 Knapsack Problem](#0-1-knapsack-problem)
 
 ## Binary Search
 
@@ -398,6 +400,10 @@ public int[] SelectionSort(int[] nums){
     > [63. Unique Paths II](https://leetcode.com/problems/unique-paths-ii/)
 4. Traversal order for DP table
 5. Deriving an example tabulation from processes above to check the correctness
+
+### Knapsack Problem
+
+#### 0-1 Knapsack Problem
 
 > <big>**Combination**</big>  
 >
