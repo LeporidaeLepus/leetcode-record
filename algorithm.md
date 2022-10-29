@@ -405,9 +405,12 @@ public int[] SelectionSort(int[] nums){
 
 #### 0-1 Knapsack Problem
 
-- 2D array
-- 1D array (if the last row/column can be reused)
-  - be care of the traversal order
+1. 2D array
+2. 1D array (if the last row/column can be reused)
+    - be care of the traversal order
+
+- If the question wants the minimum difference between 2 subarrays, than we can use sum/2 as the max weight of the bag.
+    > [1049. Last Stone Weight II](https://leetcode.com/problems/last-stone-weight-ii/)
 
 > <big>**Combination**</big>  
 >
