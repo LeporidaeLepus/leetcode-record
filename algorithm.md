@@ -405,6 +405,10 @@ public int[] SelectionSort(int[] nums){
 
 #### 0-1 Knapsack Problem
 
+- 2D array
+- 1D array (if the last row/column can be reused)
+  - be care of the traversal order
+
 > <big>**Combination**</big>  
 >
 > **C<sup>k</sup><sub>n</sub> = (<sup>n</sup><sub>k</sub>) = n! / k!(n-k)! = n(n-1)...(n-k+1) / k!**
