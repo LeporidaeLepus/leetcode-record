@@ -17,6 +17,7 @@
   - [Dynamic Progamming](#dynamic-progamming)
     - [Knapsack Problem](#knapsack-problem)
       - [0-1 Knapsack Problem](#0-1-knapsack-problem)
+      - [Complete Knapsack Problem](#complete-knapsack-problem)
 
 ## Binary Search
 
@@ -405,12 +406,20 @@ public int[] SelectionSort(int[] nums){
 
 #### 0-1 Knapsack Problem
 
+Items have attribute A and B (weight and value), the container has a limit of attribute A(bagsize) and every item can be put into the container **only once**. (put or not put, a 0-1 problem) We want to get the max value of items put into the container.
+
 1. 2D array
 2. 1D array (if the last row/column can be reused)
     - be care of the traversal order
 
 - If the question wants the minimum difference between 2 subarrays (or any question involves **subtraction or `-`**), than we can use **sum/2** as the volume of the bag.
     > [1049. Last Stone Weight II](https://leetcode.com/problems/last-stone-weight-ii/)
+
+#### Complete Knapsack Problem
+
+Every item can be put into the container **infinite times**.
+
+&nbsp;
 
 > <big>**Combination**</big>  
 >
