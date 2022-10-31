@@ -408,12 +408,43 @@ public int[] SelectionSort(int[] nums){
 
 Items have attribute A and B (weight and value), the container has a limit of attribute A(bagsize) and every item can be put into the container **only once**. (put or not put, a 0-1 problem) We want to get the max value of items put into the container.
 
-1. 2D array
+1. 2D array  
+
+   ```java
+   // int bagsize, int[] weight, int[] value
+   int len = weight.length;   // = value.length;
+   int[][] dp = new int[len][bagsize+1];
+   for(int i=0; i<len; i++){
+    for(int j=0; j<=bagsize; j++){
+      if(weight[i] > j){
+        dp[i][j] = dp[i-1][j];
+      }
+      else{
+        dp[i][j] = Math.max(dp[i-1][j], dp[i-1][j-weight[i]] + value[i]);
+      }
+    }
+   }
+    ```
+
 2. 1D array (if the last row/column can be reused)
     - be care of the traversal order
 
+    ```java
+    // int bagsize, int[] weight, int[] value
+    int len = weight.length;   // = value.length;
+    int[] dp = new int[bagsize+1];
+    for(int i=0; i<len; i++){
+      // travsersal starts from the last index to avoid the element in front from being covered
+      for(j=bagsize; j>=weight[i]; j++){
+        dp[j] = Math.max(dp[j], dp[j-weight[i]] + value[i]);
+      }
+    }
+    ```
+
 - If the question wants the minimum difference between 2 subarrays (or any question involves **subtraction or `-`**), than we can use **sum/2** as the volume of the bag.
     > [1049. Last Stone Weight II](https://leetcode.com/problems/last-stone-weight-ii/)
+- The limitaion of the container can be 2 dimentions
+    > [474. Ones and Zeroes](https://leetcode.com/problems/ones-and-zeroes/)
 
 #### Complete Knapsack Problem
 
