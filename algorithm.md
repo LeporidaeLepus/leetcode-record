@@ -17,7 +17,6 @@
   - [Dynamic Progamming](#dynamic-progamming)
     - [Knapsack Problem](#knapsack-problem)
       - [0-1 Knapsack Problem](#0-1-knapsack-problem)
-      - [Complete Knapsack Problem](#complete-knapsack-problem)
 
 ## Binary Search
 
@@ -427,7 +426,7 @@ Items have attribute A and B (weight and value), the container has a limit of at
     ```
 
 2. 1D array (if the last row/column can be reused)
-    - be care of the traversal order
+    - be care of the traversal order – **this is to make sure that every item only be added no more than once**
 
     ```java
     // int bagsize, int[] weight, int[] value
@@ -449,6 +448,20 @@ Items have attribute A and B (weight and value), the container has a limit of at
 #### Complete Knapsack Problem
 
 Every item can be put into the container **infinite times**.
+
+- The traversal order is different from the 0-1 Knapsack Problems.
+
+``` java
+// int bagsize, int[] weight, int[] value
+int len = weight.length;   // = value.length;
+int[] dp = new int[bagsize+1];
+for(int i=0; i<len; i++){
+  // travsersal starts from the first index so we can but an item into the bag several times.
+  for(j=weight[i]; j<=bagsize; j++){
+    dp[j] = Math.max(dp[j], dp[j-weight[i]] + value[i]);
+  }
+}
+```
 
 &nbsp;
 
