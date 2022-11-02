@@ -467,6 +467,7 @@ Every item can be put into the container **infinite times**.
   ```
 
   - Permutation:
+    > [377. Combination Sum IV](https://leetcode.com/problems/combination-sum-iv/)
   
   ```java
   // int bagsize, int[] weight, int[] value
