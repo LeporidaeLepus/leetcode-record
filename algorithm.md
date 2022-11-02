@@ -450,18 +450,37 @@ Items have attribute A and B (weight and value), the container has a limit of at
 Every item can be put into the container **infinite times**.
 
 - The traversal order is different from the 0-1 Knapsack Problems.
+- The order of loop which dimention first is different between **Combination** and **Permutation**.
+  - Combination:
 
-``` java
-// int bagsize, int[] weight, int[] value
-int len = weight.length;   // = value.length;
-int[] dp = new int[bagsize+1];
-for(int i=0; i<len; i++){
-  // travsersal starts from the first index so we can but an item into the bag several times.
-  for(j=weight[i]; j<=bagsize; j++){
-    dp[j] = Math.max(dp[j], dp[j-weight[i]] + value[i]);
+  ``` java
+  // int bagsize, int[] weight, int[] value
+  int len = weight.length;   // = value.length;
+  int[] dp = new int[bagsize+1];
+  /* Initialization */
+  for(int i=0; i<len; i++){
+    // travsersal starts from the first index so we can but an item into the bag several times.
+    for(j=weight[i]; j<=bagsize; j++){
+      dp[j] = Math.max(dp[j], dp[j-weight[i]] + value[i]);
+    }
   }
-}
-```
+  ```
+
+  - Permutation:
+  
+  ```java
+  // int bagsize, int[] weight, int[] value
+  int len = weight.length;   // = value.length;
+  int[] dp = new int[bagsize+1];
+  /* Initialization */
+  for(int i=0; i<=bagsize; i++){
+    // travsersal starts from the first index so we can but an item into the bag several times.
+    for(j=0; j<length; j++){
+      if(i >= weight[j])
+        dp[i] = //dp formula;
+    }
+  }
+  ```
 
 &nbsp;
 
