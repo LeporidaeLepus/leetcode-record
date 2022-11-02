@@ -473,8 +473,8 @@ Every item can be put into the container **infinite times**.
   int len = weight.length;   // = value.length;
   int[] dp = new int[bagsize+1];
   /* Initialization */
+  // Loop the bagsize first, so we can get the permutation of all the items of a specific bagsize
   for(int i=0; i<=bagsize; i++){
-    // travsersal starts from the first index so we can but an item into the bag several times.
     for(j=0; j<length; j++){
       if(i >= weight[j])
         dp[i] = //dp formula;
