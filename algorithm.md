@@ -1,26 +1,21 @@
 # Algorithm
 
-[toc]
-
-- [Algorithm](#algorithm)
-  - [Binary Search](#binary-search)
-  - [DFS (Depth-First Search)](#dfs-depth-first-search)
-  - [BFS (Breadth-First Search)](#bfs-breadth-first-search)
-  - [Recursion](#recursion)
-  - [Divide and Conqure](#divide-and-conqure)
-  - [Sort](#sort)
-    - [1. QuickSort](#1-quicksort)
-      - [QuickSelect](#quickselect)
-    - [2. InsertingSort](#2-insertingsort)
-    - [3. BubbleSort](#3-bubblesort)
-    - [4. MergeSort](#4-mergesort)
-    - [5. HeapSort](#5-heapsort)
-    - [6. SelectionSort](#6-selectionsort)
-  - [Dynamic Progamming](#dynamic-progamming)
-    - [Knapsack Problem](#knapsack-problem)
-      - [0-1 Knapsack Problem](#0-1-knapsack-problem)
-      - [Multiple Knapsacks Problem](#multiple-knapsacks-problem)
-
+<!-- no toc -->
+- [Binary Search](#binary-search)
+- [DFS (Depth-First Search)](#dfs-depth-first-search)
+- [BFS (Breadth-First Search)](#bfs-breadth-first-search)
+- [Recursion](#recursion)
+- [Divide and Conqure](#divide-and-conqure)
+- [Sort](#sort)
+  - [1. QuickSort](#1-quicksort)
+    - [QuickSelect](#quickselect)
+  - [2. InsertingSort](#2-insertingsort)
+  - [3. BubbleSort](#3-bubblesort)
+  - [4. MergeSort](#4-mergesort)
+  - [5. HeapSort](#5-heapsort)
+  - [6. SelectionSort](#6-selectionsort)
+- [Dynamic Progamming](#dynamic-progamming)
+  - [Knapsack Problem](#knapsack-problem)
 
 ## Binary Search
 
