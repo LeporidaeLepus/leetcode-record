@@ -483,6 +483,10 @@ Every item can be put into the container **infinite times**.
   }
   ```
 
+- If we want to get a **minimum** result, be careful when we initialize the array. Set the initial value to **`Integer.MAX_VALUE`** if necessary.
+    > [322. Coin Change](https://leetcode.com/problems/coin-change/)  
+    > [279. Perfect Squares](https://leetcode.com/problems/perfect-squares/)
+
 &nbsp;
 
 > <big>**Combination**</big>  
