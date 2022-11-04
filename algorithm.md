@@ -17,6 +17,7 @@
   - [Dynamic Progamming](#dynamic-progamming)
     - [Knapsack Problem](#knapsack-problem)
       - [0-1 Knapsack Problem](#0-1-knapsack-problem)
+      - [Multiple Knapsacks Problem](#multiple-knapsacks-problem)
 
 ## Binary Search
 
@@ -486,6 +487,28 @@ Every item can be put into the container **infinite times**.
 - If we want to get a **minimum** result, be careful when we initialize the array. Set the initial value to **`Integer.MAX_VALUE`** if necessary.
     > [322. Coin Change](https://leetcode.com/problems/coin-change/)  
     > [279. Perfect Squares](https://leetcode.com/problems/perfect-squares/)
+
+#### Multiple Knapsacks Problem
+
+Every item can be put into the container m<sub>i</sub> times.
+
+- consider item i as m<sub>i</sub> different items -> 0-1 knapsacks problems
+- add a loop in 0-1 knapsacks problems
+  
+  ```java
+  // int bagsize, int[] weight, int[] value, int num[]
+  int len = weight.length;   // = value.length;
+  int[] dp = new int[bagsize+1];
+  for(int i = 0; i < len; i++) {
+    // travsersal starts from the last index to avoid the element in front from being covered
+    for(int j = bagsize; j >= weight[i]; j++) {
+      // add a loop here to add item k times to the bag
+      for(int k = 1; k <= num[i] && j >= k * weight[i]; k++){
+        dp[j] = Math.max(dp[j], dp[j - k * weight[i]] + k * value[i]);
+      }
+    }
+  }
+  ```
 
 &nbsp;
 
