@@ -1,5 +1,7 @@
 # Algorithm
 
+[toc]
+
 - [Algorithm](#algorithm)
   - [Binary Search](#binary-search)
   - [DFS (Depth-First Search)](#dfs-depth-first-search)
@@ -18,6 +20,7 @@
     - [Knapsack Problem](#knapsack-problem)
       - [0-1 Knapsack Problem](#0-1-knapsack-problem)
       - [Multiple Knapsacks Problem](#multiple-knapsacks-problem)
+
 
 ## Binary Search
 
