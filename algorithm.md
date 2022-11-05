@@ -545,19 +545,20 @@ Rob a street of houses and cannot rob adjasant housese, get the maximum money ca
   ```java
   //nums[] -> money can be robbed in each house
   int len = nums.length;
+  if (len == 1) return nums[0];
   // dp[i] means the maximum money can be robbed in the first i houses
   int[] dp = new int[len+1];  
-  // dp[i] = min(dp[i-1], dp[i-2] + nums[i])
+  // dp[i] = max(dp[i-1], dp[i-2] + nums[i])
   // Initialize dp[0] = 0, dp[1] = nums[0];
   for (int i = 2; i<=len; i++) {
-    dp[i] = Math.min(dp[i-1], dp[i-2] + nums[i]);
+    dp[i] = Math.max(dp[i-1], dp[i-2] + nums[i-1]);
   }
   return dp[len];
   ```
 
 - If the houses are arranged in a cycle, consider three situations:  
-  1. without the first house
-  2. without the last house  
+  **1. without the first house**  
+  **2. without the last house**  
   3. without the first and the last house  
   
 since the iii. situation is contained in the i. and ii. situations, so we only need to consider the first two situation and get the maximum one of them.
