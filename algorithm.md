@@ -534,3 +534,30 @@ Every item can be put into the container m<sub>i</sub> times.
 >   return numerator;
 > }
 > ```
+
+### House Robber Problem
+
+Rob a street of houses and cannot rob adjasant housese, get the maximum money can be robbed.
+
+1. Recursion with Memorization
+2. **Dynamic Programming with Tabulation**
+  
+  ```java
+  //nums[] -> money can be robbed in each house
+  int len = nums.length;
+  // dp[i] means the maximum money can be robbed in the first i houses
+  int[] dp = new int[len+1];  
+  // dp[i] = min(dp[i-1], dp[i-2] + nums[i])
+  // Initialize dp[0] = 0, dp[1] = nums[0];
+  for (int i = 2; i<=len; i++) {
+    dp[i] = Math.min(dp[i-1], dp[i-2] + nums[i]);
+  }
+  return dp[len];
+  ```
+
+- If the houses are arranged in a cycle, consider three situations:  
+  1. without the first house
+  2. without the last house  
+  3. without the first and the last house  
+  
+since the iii. situation is contained in the i. and ii. situations, so we only need to consider the first two situation and get the maximum one of them.
