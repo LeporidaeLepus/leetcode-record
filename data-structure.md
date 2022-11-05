@@ -290,7 +290,3 @@ recursion + memory -> Dynamic Problem
 To test whether a binary tree is a **valid BST**, use **inorder traversal** to turn the tree into an array and test whether the array is ascending.
 
 > [98. Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)
-
-### BFS
-
-### DFS
