@@ -556,12 +556,24 @@ Rob a street of houses and cannot rob adjasant housese, get the maximum money ca
   return dp[len];
   ```
 
-- If the houses are arranged in a cycle, consider three situations:  
-  **1. without the first house**  
-  **2. without the last house**  
+#### Rob a Cycle
+
+If the houses are arranged in a **cycle**, consider three situations:  
+
+  1. without the first house
+  2. without the last house  
   3. without the first and the last house  
   
-since the iii. situation is contained in the i. and ii. situations, so we only need to consider the first two situation and get the maximum one of them.
+since situation 3 is contained in situation 1 and 2, so we only need to consider the first two situations and get the maximum one of them.
+
+#### Rob a Binary Tree
+
+Recursion (binary tree) + dp[2] (steal or not steal)
+
+1. Parameter and return value of recursive function -> {parameter: `Node root`; return value: `int[] dp`}
+2. Termination conditions -> `root == null`
+3. Traversal order -> postorder
+4. The logic of recursion (dp formula)
 
 > [337. House Robber III](https://leetcode.com/problems/house-robber-iii/)  
-> Rob a Binary Tree.
+
