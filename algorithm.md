@@ -562,3 +562,6 @@ Rob a street of houses and cannot rob adjasant housese, get the maximum money ca
   3. without the first and the last house  
   
 since the iii. situation is contained in the i. and ii. situations, so we only need to consider the first two situation and get the maximum one of them.
+
+> [337. House Robber III](https://leetcode.com/problems/house-robber-iii/)  
+> Rob a Binary Tree.
