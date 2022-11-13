@@ -597,6 +597,7 @@ Recursion (binary tree) + dp[2] (steal or not steal)
     dp[1] = 0;
     for(int i=1; i<len; i++){
       dp[0] = Math.max(dp[0], -prices[i]);
+      // if dp[0] is updated, it means that dp[0] in yesterday is less than -prices[i], which also means dp[0] + prices[i] < 0. Since dp[1] should always larger or equal than 0, the dp[1] can only be dp[1] in yesterday and the update of dp[0] will not affect the result of dp[1].
       dp[1] = Math.max(dp[1], dp[0] + prices[i]);
     }
     return dp[1];
