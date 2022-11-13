@@ -581,9 +581,11 @@ Recursion (binary tree) + dp[2] (steal or not steal)
 
 ### Best Time to Buy and Sell Stock
 
-Tabulation: `dp[prices.length][2]`
-
-1. `dp[i][0]` is the most money we can have if we **hold stock** in the ith day; `dp[i][1]` is the the most money we can have if we **do not hold** stock in the ith day
-2. `dp[i][0] = max(dp[i-1][0], -prices[i])` (if we hold stack in the ith day, the most money we can have is the max of these two situations: (1) we hold stock yesterday then we keep the same; (2) we buy stock today)  
-   `dp[i][1] = max(dp[i-1][1], dp[i-1][0] + prices[i])` (if we do not hold stack in the ith day, the most money we can have is the max of these two situations: (1) we do not hold stock yesterday then we keep the same; (2) we hold stock yesterday but sold it today)
-
+1. 2D Array (`dp[prices.length][2]`)
+    - `dp[i][0]` is the most money we can have if we **hold stock** in the ith day; `dp[i][1]` is the the most money we can have if we **do not hold** stock in the ith day
+    - `dp[i][0] = max(dp[i-1][0], -prices[i])` (if we hold stack in the ith day, the most money we can have is the max of these two situations: (1) we hold stock yesterday then we keep the same; (2) we buy stock today)  
+    `dp[i][1] = max(dp[i-1][1], dp[i-1][0] + prices[i])` (if we do not hold stack in the ith day, the most money we can have is the max of these two situations: (1) we do not hold stock yesterday then we keep the same; (2) we hold stock yesterday but sold it today)  
+    **The maximum profit we can finally get: `dp[prices.length][1]`**
+    - Initialization: `dp[1][0] = -prices[0]`; `dp[1][1] = 0`
+    - Traversal from front to back
+2. 1D Array
