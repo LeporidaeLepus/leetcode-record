@@ -588,4 +588,16 @@ Recursion (binary tree) + dp[2] (steal or not steal)
     **The maximum profit we can finally get: `dp[prices.length][1]`**
     - Initialization: `dp[1][0] = -prices[0]`; `dp[1][1] = 0`
     - Traversal from front to back
-2. 1D Array
+2. 1D Array (dp[2])
+
+    ```java
+    int len = prices.length;
+    int[] dp = new int[2];
+    dp[0] = -prices[0];
+    dp[1] = 0;
+    for(int i=1; i<len; i++){
+      dp[0] = Math.max(dp[0], -prices[i]);
+      dp[1] = Math.max(dp[1], dp[0] + prices[i]);
+    }
+    return dp[1];
+    ```
